@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import MyRunner.Configuration;
+import MyRunner.Utils;
+import bsh.util.Util;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -48,7 +50,12 @@ public class TestStepDefinition {
 		WebElement password = driver.findElement(By.id("password"));
 		WebElement logButton = driver.findElement(By.name("commit"));
 
-
+		Utils.fileWriter("AB_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABA_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABA_Rebook_CB", Utils.getRandomNumber(10));
+		
 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_field")));
@@ -56,7 +63,7 @@ public class TestStepDefinition {
 		uname.sendKeys(Configuration.getConfiguration().getProperty("Username"));
 		password.sendKeys(Configuration.getConfiguration().getProperty("password"));
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		logButton.click();
 
 		WebDriverWait wait1 = new WebDriverWait(driver,30);
