@@ -49,7 +49,7 @@ public class Utils {
 	{
 		String temp="";
 		try {
-			String path=getUserHomePath()+"/PNR";	 
+			String path=fileLoc+"/PNR";	 
 			FileReader reader=new FileReader(new File(path+"/"+fileName+".txt"));
 
 			int i;    
