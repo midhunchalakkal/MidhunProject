@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Configuration {
 
-	public static String configFilePath=(System.getProperty("user.dir")+"\\global.properties").replace("\\",System.getProperty("file.separator"));
+	public static String configFilePath=(System.getProperty("user.dir")+"\\project-bootstrap.properties").replace("\\",System.getProperty("file.separator"));
 	private static final Configuration CONFIG=new Configuration();
 	private final Properties myProps;
 	
