@@ -22,7 +22,7 @@ public class Sample {
 
 			if(!(text.charAt(i)==' '))
 			{
-				System.out.println("count of the char '"+text.charAt(i)+"' = "+count);
+				System.out.println("count osdfsdf the char '"+text.charAt(i)+"' = "+count);
 			}
 			text=text.replace(text.charAt(i)+"", " ");
 
