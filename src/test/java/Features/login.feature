@@ -1,7 +1,7 @@
-Feature: Facebook login
+Feature: Github login
 
-Scenario: Facebook Login Test Scenario
+Scenario: Github Login Test Scenario
 
 Given user is already on Login Page
-When title of login page is Facebook
+When title of login page is Git hub
 Then loginpage is displayed
