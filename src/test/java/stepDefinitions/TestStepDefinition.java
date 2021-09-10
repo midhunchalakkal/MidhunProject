@@ -52,9 +52,10 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		
-		String test=Configuration.getConfiguration().getProperty("projectName");
+		String projectName1=Configuration.getConfiguration().getProperty("projectName");
+		String projectName2=Configuration.getConfiguration().getProperty("previousProject");
 		
-		String previousJobDir=System.getProperty("user.dir").replace("CucumberTest2", "CucumberTest1");
+		String previousJobDir=System.getProperty("user.dir").replace(projectName1, projectName2);
 		
 		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
 		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABA_BOOKING_CB"));
