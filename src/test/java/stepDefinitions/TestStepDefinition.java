@@ -72,7 +72,6 @@ public class TestStepDefinition {
 			System.out.println("#####################################");
 			System.out.println("                                     ");
 			System.out.println("Test case is passsed");
-			System.out.println(System.getProperty("Username"));
 			System.out.println(Configuration.getConfiguration().getProperty("Username"));
 			System.out.println("                                     ");
 			System.out.println("#####################################");
