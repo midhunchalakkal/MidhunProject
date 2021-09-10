@@ -54,10 +54,10 @@ public class TestStepDefinition {
 		String previousJobDir=System.getProperty("user.dir").replace("CucumberTest2", "CucumberTest1");
 		
 		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
-		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
-		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
-		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
-		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABA_BOOKING_CB"));
+		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABACDA_BOOKING_CB"));
+		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_Rebook_CB"));
+		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "ABA_Rebook_CB"));
 		
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
