@@ -42,7 +42,7 @@ public class TestStepDefinition {
 	}
 
 	@Then("^loginpage is displayed$")
-	public void i_want_to_verify_whether_user_navigated_to_home_page_or_not() {
+	public void i_want_to_verify_whether_user_navigated_to_home_page_or_not() throws InterruptedException {
 
 		WebElement uname = driver.findElement(By.id("login_field"));
 		WebElement password = driver.findElement(By.id("password"));
@@ -55,6 +55,8 @@ public class TestStepDefinition {
 
 		uname.sendKeys(Configuration.getConfiguration().getProperty("Username"));
 		password.sendKeys(Configuration.getConfiguration().getProperty("password"));
+		
+		Thread.sleep(5000);
 		logButton.click();
 
 		WebDriverWait wait1 = new WebDriverWait(driver,30);
