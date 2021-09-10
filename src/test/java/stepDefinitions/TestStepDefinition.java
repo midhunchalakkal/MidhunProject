@@ -51,9 +51,8 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		System.out.println("Start updating the job 1 data");
-		System.out.println(System.getProperty("user.dir"));
 		String previousJobDir=System.getProperty("user.dir").replaceAll("CucumberTest2", "CucumberTest1");
-		//System.out.println(Utils.fileReader(previousJobDir+"/PNR", "AB_BOOKING_CB"));
+		System.out.println(Utils.fileReader(previousJobDir+"/PNR/", "AB_BOOKING_CB"));
 		System.out.println(previousJobDir);
 		System.out.println("Start updating the job 1 data");
 		
