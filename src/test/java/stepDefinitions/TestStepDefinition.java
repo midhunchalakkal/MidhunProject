@@ -29,6 +29,17 @@ public class TestStepDefinition {
 	}
 
 
+	@Given("^Create the test data$")
+	public void createTestData() {
+
+		Utils.fileWriter("AB_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABA_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABA_Rebook_CB", Utils.getRandomNumber(10));
+
+	}
+
 	@Given("^user is already on Login Page$")
 	public void i_want_to_launch_the_facebook_in_firefox_browser() {
 
@@ -50,12 +61,6 @@ public class TestStepDefinition {
 		WebElement password = driver.findElement(By.id("password"));
 		WebElement logButton = driver.findElement(By.name("commit"));
 
-		Utils.fileWriter("AB_BOOKING_CB", Utils.getRandomNumber(10));
-		Utils.fileWriter("ABA_BOOKING_CB", Utils.getRandomNumber(10));
-		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
-		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
-		Utils.fileWriter("ABA_Rebook_CB", Utils.getRandomNumber(10));
-		
 
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_field")));
