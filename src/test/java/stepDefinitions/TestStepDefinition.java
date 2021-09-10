@@ -37,6 +37,7 @@ public class TestStepDefinition {
 		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("ABA_Rebook_CB", "ABA_Rebook_CB_Test123");
+		System.setProperty("ABASA_BOOKING_CB","testproperty");
 
 	}
 
@@ -51,6 +52,7 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		
+		
 		String previousJobDir=System.getProperty("user.dir").replace("CucumberTest2", "CucumberTest1");
 		
 		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
@@ -58,7 +60,7 @@ public class TestStepDefinition {
 		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABACDA_BOOKING_CB"));
 		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_Rebook_CB"));
 		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "ABA_Rebook_CB"));
-		
+		System.out.println("ABASA_BOOKING_CB  :- "+System.getProperty("ABASA_BOOKING_CB"));
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
 	}
