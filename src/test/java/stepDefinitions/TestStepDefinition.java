@@ -52,6 +52,7 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		
+		String test=Configuration.getConfiguration().getProperty("projectName");
 		
 		String previousJobDir=System.getProperty("user.dir").replace("CucumberTest2", "CucumberTest1");
 		
