@@ -36,7 +36,7 @@ public class TestStepDefinition {
 		Utils.fileWriter("ABA_BOOKING_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
-		Utils.fileWriter("ABA_Rebook_CB", Utils.getRandomNumber(10));
+		Utils.fileWriter("ABA_Rebook_CB", "ABA_Rebook_CB_Test123");
 
 	}
 
@@ -52,11 +52,12 @@ public class TestStepDefinition {
 
 		
 		String previousJobDir=System.getProperty("user.dir").replace("CucumberTest2", "CucumberTest1");
-		System.out.println("Start updating the job 1 data");
-		System.out.println(previousJobDir);
-		System.out.println("Start updating the job 1 data");
-		System.out.println(previousJobDir+"/PNR");
-		System.out.println(Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		
+		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
 		
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
