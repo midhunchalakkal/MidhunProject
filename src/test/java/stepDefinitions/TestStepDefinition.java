@@ -34,7 +34,7 @@ public class TestStepDefinition {
 
 	}
 
-	@When("^title of login page is Facebook$")
+	@When("^title of login page is Git hub$")
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
