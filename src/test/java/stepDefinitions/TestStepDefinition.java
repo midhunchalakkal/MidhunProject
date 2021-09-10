@@ -50,6 +50,10 @@ public class TestStepDefinition {
 	@When("^title of login page is Git hub$")
 	public void i_want_to_authenticate_with_valid_credentails() {
 
+		System.out.println("Start updating the job 1 data");
+		System.out.println(System.getProperty("user.dir"));
+		System.out.println("Start updating the job 1 data");
+		
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
 	}
