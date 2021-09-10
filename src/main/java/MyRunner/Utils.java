@@ -45,7 +45,7 @@ public class Utils {
 		}
 	}
 
-	public static String fileReader(String fileName) 
+	public static String fileReader(String fileLoc,String fileName) 
 	{
 		String temp="";
 		try {
