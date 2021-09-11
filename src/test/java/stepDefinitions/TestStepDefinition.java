@@ -37,7 +37,8 @@ public class TestStepDefinition {
 		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("ABA_Rebook_CB", "ABA_Rebook_CB_Test123");
-
+		String previousJobDir=System.getProperty("user.dir");
+		System.out.println("Test data preparation "+previousJobDir);
 	}
 
 	@Given("^user is already on Login Page$")
@@ -51,16 +52,23 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		
-		String projectName1=Configuration.getConfiguration().getProperty("projectName");
-		String projectName2=Configuration.getConfiguration().getProperty("previousProject");
+		//String projectName1=Configuration.getConfiguration().getProperty("projectName");
+		//String projectName2=Configuration.getConfiguration().getProperty("previousProject");
 		
-		String previousJobDir=System.getProperty("user.dir").replace(projectName1, projectName2);
+		String previousJobDir=System.getProperty("user.dir");
+		System.out.println("Test execution "+previousJobDir);
 		
-		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
-		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABA_BOOKING_CB"));
-		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABACDA_BOOKING_CB"));
-		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_Rebook_CB"));
-		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "ABA_Rebook_CB"));
+		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader( "AB_BOOKING_CB"));
+		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader("ABA_BOOKING_CB"));
+		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader( "ABACDA_BOOKING_CB"));
+		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader( "AB_Rebook_CB"));
+		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader( "ABA_Rebook_CB"));
+		
+//		System.out.println("AB_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "AB_BOOKING_CB"));
+//		System.out.println("ABA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABA_BOOKING_CB"));
+//		System.out.println("ABACDA_BOOKING_CB  :- "+Utils.fileReader(previousJobDir, "ABACDA_BOOKING_CB"));
+//		System.out.println("AB_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "AB_Rebook_CB"));
+//		System.out.println("ABA_Rebook_CB  :- "+Utils.fileReader(previousJobDir, "ABA_Rebook_CB"));
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.MINUTES);
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
 	}

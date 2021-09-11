@@ -45,11 +45,11 @@ public class Utils {
 		}
 	}
 
-	public static String fileReader(String fileLoc,String fileName) 
+	public static String fileReader(String fileName) 
 	{
 		String temp="";
 		try {
-			String path=fileLoc+"/PNR";	 
+			String path=getUserHomePath()+"/PNR";	 
 			FileReader reader=new FileReader(new File(path+"/"+fileName+".txt"));
 
 			int i;    
