@@ -6,17 +6,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    bat 'mvn -f pom.xml -Dcucumber.options=--tags '@TestData' test'
-                    
-                }
-            }
-        }
-        stage ('Test case execution') {
-
-            steps {
-                withMaven(maven : 'Maven setup') {
-                
-                    bat 'mvn -f pom.xml -Dcucumber.options=--tags '@sanity' test'
+                    bat 'mvn -f pom.xml "-Dcucumber.options=--tags '@TestData'" test'
                     
                 }
             }
