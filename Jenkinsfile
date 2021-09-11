@@ -2,28 +2,28 @@ node() {
    // adds job parameters within jenkinsfile
    properties([
      parameters([
-       booleanParam(
-         defaultValue: false,
-         description: 'isFoo should be false',
-         name: 'isFoo'
+       stringParam(
+         defaultValue: dasda,
+         description: 'environment rfgsgs',
+         name: 'environment'
        ),
-       booleanParam(
-         defaultValue: true,
-         description: 'isBar should be true',
-         name: 'isBar'
+       stringParam(
+         defaultValue: '10',
+         description: 'threadCount srfgsd',
+         name: 'threadCount'
        ),
      ])
    ])
 
    // test the false value
-   print 'DEBUG: parameter isFoo = ' + params.isFoo
-   print "DEBUG: parameter isFoo = ${params.isFoo}"
-   sh "echo sh isFoo is ${params.isFoo}"
-   if (params.isFoo) { print "THIS SHOULD NOT DISPLAY" }
+   print 'DEBUG: parameter isFoo = ' + params.environment
+   print "DEBUG: parameter isFoo = ${params.environment}"
+   sh "echo sh environment is ${params.environment}"
+   if (params.environment) { print "THIS SHOULD NOT DISPLAY" }
 
    // test the true value
-   print 'DEBUG: parameter isBar = ' + params.isBar
-   print "DEBUG: parameter isBar = ${params.isBar}"
-   sh "echo sh isBar is ${params.isBar}"
-   if (params.isBar) { print "this should display" }
+   print 'DEBUG: parameter threadCount = ' + params.threadCount
+   print "DEBUG: parameter threadCount = ${params.threadCount}"
+   sh "echo sh threadCount is ${params.threadCount}"
+   if (params.threadCount) { print "this should display" }
 }
