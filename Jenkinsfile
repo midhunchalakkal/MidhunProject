@@ -14,7 +14,7 @@ pipeline {
             
          }
          
-          stage ("Prompt for input") 
+          stage ("Change flght status") 
         {
             steps {
              script {
