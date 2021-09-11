@@ -14,7 +14,11 @@ node() {
        ),
        
        
-     ])
+     ],
+     [choice(name: 'Is Flight cancelled ?', choices: 'Yes', description: '')]
+     
+     
+     )
    ])
 
    // test the false value
