@@ -9,7 +9,8 @@ pipeline {
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
-                 [choice((name: 'environment', choices: 'prelive', description: '')(name: 'environment', choices: 'TestLive2', description: ''))]
+                 [choice(name: 'environment', choices: 'prelive', description: '')],
+                 [choice(name: 'environment', choices: 'testlive1', description: '')],
                  [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Path of config file', name: 'Config'],
                  [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Test Info file', name: 'Test']
                 ])
