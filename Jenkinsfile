@@ -1,35 +1,19 @@
-node() {
-   // adds job parameters within jenkinsfile
-   properties([
-     parameters([
-       booleanParam(
-         defaultValue: false,
-         description: 'isFoo should be false',
-         name: 'isFoo'
-       ),
-       booleanParam(
-         defaultValue: false,
-         description: 'isBar should be false',
-         name: 'isBar'
-       ),
-       
-       
-     ],
-     [choice(name: 'Is Flight cancelled ?', choices: 'Yes', description: '')]
-     
-     
-     )
-   ])
+node {
+   groovy.lang.Binding myBinding = getBinding()
+   boolean mybool = myBinding.hasVariable("STRING_PARAM1")
+   echo mybool.toString()
+   if (mybool) {
+       echo STRING_PARAM1
+       echo getProperty("STRING_PARAM1")
+   } else {
+       echo "STRING_PARAM1 is not defined"
+   }
 
-   // test the false value
-   print 'DEBUG: parameter isFoo = ' + params.isFoo
-   print "DEBUG: parameter isFoo = ${params.isFoo}"
-   sh "echo sh isFoo is ${params.isFoo}"
-   if (params.isFoo) { print "THIS SHOULD NOT DISPLAY" }
-
-   // test the true value
-   print 'DEBUG: parameter isBar = ' + params.isBar
-   print "DEBUG: parameter isBar = ${params.isBar}"
-   sh "echo sh isBar is ${params.isBar}"
-   if (params.isBar) { print "this should display" }
+   mybool = myBinding.hasVariable("DID_NOT_DEFINE_THIS")
+   if (mybool) {
+       echo DID_NOT_DEFINE_THIS
+       echo getProperty("DID_NOT_DEFINE_THIS")
+   } else {
+       echo "DID_NOT_DEFINE_THIS is not defined"
+   }
 }
