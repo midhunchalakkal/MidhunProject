@@ -34,7 +34,7 @@ pipeline {
           stage ('Cucumber Reports') {
 
             steps {
-                    cucumber buildStatus: "STABLE",
+                    cucumber buildStatus: "UNSTABLE",
                     fileIncludePattern: "*/cucumber.json",
                     jsonReportDirectory: 'target'
 
