@@ -13,6 +13,21 @@ pipeline {
                 }
             
          }
+         
+          stage ("Prompt for input") 
+        {
+            steps {
+             script {
+               env.EXECUTE = input message: 'Is Flight is cancelled ?',
+                             parameters: [string(defaultValue: '',
+                                          description: '',
+                                          name: 'Yes')]
+     
+                  }
+       
+               }
+         }
+         
           stage ('Test Execution') 
         {
 
@@ -25,6 +40,8 @@ pipeline {
                 }
             
          }
+         
+        
        
     }
 }
