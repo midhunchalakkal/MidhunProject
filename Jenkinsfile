@@ -40,25 +40,31 @@ pipeline {
                 }
             
          }
-         
-           stage ('Report') 
-        {
-
-            steps {
-                cucumber buildStatus: 'UNSTABLE',
-                failedFeaturesNumber: 1,
-                failedScenariosNumber: 1,
-                skippedStepsNumber: 1,
-                failedStepsNumber: 1,
-                classifications: [
-                        [key: 'Commit', value: '<a href="${GERRIT_CHANGE_URL}">${GERRIT_PATCHSET_REVISION}</a>'],
-                        [key: 'Submitter', value: '${GERRIT_PATCHSET_UPLOADER_NAME}']
-                ],
-                reportTitle: 'My report',
-                fileIncludePattern: '**/*cucumber-report.json',
-                sortingMethod: 'ALPHABETICAL',
-                trendsLimit: 100
-                }
+            
+            
+           {
+stage(“Publish Reports”) {
+echo "***** Publish Reports ***"
+step([
+$class: ‘CucumberReportPublisher’,
+failedFeaturesNumber: 0,
+failedScenariosNumber: 0,
+failedStepsNumber: 0,
+fileExcludePattern: ‘’,
+fileIncludePattern: '/*.json’,
+jsonReportDirectory: ‘testrun/reports’,
+parallelTesting: true,
+pendingStepsNumber: 0,
+skippedStepsNumber: 0,
+trendsLimit: 0,
+undefinedStepsNumber: 0,
+classifications: runClassifications
+])
+}
+} 
+            
+            
+            
             
          }
          
