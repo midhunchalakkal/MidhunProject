@@ -12,11 +12,7 @@ node() {
          description: 'isBar should be true',
          name: 'isBar'
        ),
-         stringParam(
-         defaultValue: true,
-         description: 'isBar should be true',
-         name: 'environment'
-       ),
+       
        
      ])
    ])
