@@ -41,9 +41,11 @@ pipeline {
             
          }
          
-        post {
-    always {
-        cucumber buildStatus: 'UNSTABLE',
+           stage ('Report') 
+        {
+
+            steps {
+                cucumber buildStatus: 'UNSTABLE',
                 failedFeaturesNumber: 1,
                 failedScenariosNumber: 1,
                 skippedStepsNumber: 1,
@@ -56,8 +58,10 @@ pipeline {
                 fileIncludePattern: '**/*cucumber-report.json',
                 sortingMethod: 'ALPHABETICAL',
                 trendsLimit: 100
-    }
-}
-       
+                }
+            
+         }
+         
+     
     }
 }
