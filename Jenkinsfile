@@ -27,3 +27,24 @@ node() {
    sh "echo sh isBar is ${params.isBar}"
    if (params.isBar) { print "this should display" }
 }
+
+
+pipeline {
+    agent any
+    stages {
+        
+        
+        stage ('Test data preparation') 
+        {
+
+            steps {
+                withMaven(maven : 'Maven setup') {
+                
+                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData"'
+                    
+                       }
+                }
+            
+         }
+      }
+      }
