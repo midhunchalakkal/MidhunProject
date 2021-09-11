@@ -8,8 +8,8 @@ node() {
          name: 'isFoo'
        ),
        booleanParam(
-         defaultValue: true,
-         description: 'isBar should be true',
+         defaultValue: false,
+         description: 'isBar should be false',
          name: 'isBar'
        ),
        
@@ -29,24 +29,3 @@ node() {
    sh "echo sh isBar is ${params.isBar}"
    if (params.isBar) { print "this should display" }
 }
-
-
-pipeline {
-    agent any
-    stages {
-        
-        
-        stage ('Test data preparation') 
-        {
-
-            steps {
-                withMaven(maven : 'Maven setup') {
-                
-                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData"'
-                    
-                       }
-                }
-            
-         }
-      }
-      }
