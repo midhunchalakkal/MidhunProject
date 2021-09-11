@@ -3,7 +3,7 @@ pipeline {
     stages {
         
         
-        stage ('Test data preparation') 
+        stage ('Test data preparation')
         {
 
             steps {
@@ -16,20 +16,21 @@ pipeline {
             
          }
          
-          stage ("Change flght status") 
+          stage ("Change flght status")
         {
             steps {
              script {
-               env.EXECUTE = input message: 'User input required',
-                              parameters: [choice(name: 'Is Flight cancelled ?', choices: 'Yes', description: '')]
-                   
+               env.EXECUTE = input message: 'Is Flight is cancelled ?',
+                             parameters: [string(defaultValue: '',
+                                          description: '',
+                                          name: 'Yes')]
      
                   }
        
                }
          }
          
-          stage ('Test Execution') 
+          stage ('Test Execution')
         {
 
             steps {
@@ -41,15 +42,6 @@ pipeline {
                 }
             
          }
-         
-          stage ('Cucumber Reports') {
-
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
-
-            }
      
    }
 }
