@@ -37,8 +37,9 @@ public class TestStepDefinition {
 		Utils.fileWriter("ABACDA_BOOKING_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("ABA_Rebook_CB", "ABA_Rebook_CB_Test123");
-		String previousJobDir=System.getProperty("user.dir");
-		System.out.println("Test data preparation "+previousJobDir);
+		
+		System.out.println(Configuration.getConfiguration().getProperty("environment"));
+		
 	}
 
 	@Given("^user is already on Login Page$")
