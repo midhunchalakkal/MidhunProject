@@ -1,28 +1,29 @@
-pipeline {
-    agent any
-    stages {
-        
-        
-        stage("Interactive_Input") {
-            steps {
-                script {
-                def userInput = input(
-                 id: 'userInput', message: 'Enter path of test reports:?', 
-                 parameters: [
-                 [$class: 'TextParameterDefinition', defaultValue: 'prelive', description: 'environment', name: 'environment'],
-                 [$class: 'TextParameterDefinition', defaultValue: '--tags @TestData', description: 'Tag', name: 'Tag']
-                ])
-                echo ("environment #####: "+userInput['environment'])
-                echo ("Tag : ###########:"+userInput['Tag'])
+node() {
+   // adds job parameters within jenkinsfile
+   properties([
+     parameters([
+       booleanParam(
+         defaultValue: false,
+         description: 'isFoo should be false',
+         name: 'isFoo'
+       ),
+       booleanParam(
+         defaultValue: true,
+         description: 'isBar should be true',
+         name: 'isBar'
+       ),
+     ])
+   ])
 
-                }
-                
-      
-                       
-                       
-            }
-        }
-         
-     
-   }
+   // test the false value
+   print 'DEBUG: parameter isFoo = ' + params.isFoo
+   print "DEBUG: parameter isFoo = ${params.isFoo}"
+   sh "echo sh isFoo is ${params.isFoo}"
+   if (params.isFoo) { print "THIS SHOULD NOT DISPLAY" }
+
+   // test the true value
+   print 'DEBUG: parameter isBar = ' + params.isBar
+   print "DEBUG: parameter isBar = ${params.isBar}"
+   sh "echo sh isBar is ${params.isBar}"
+   if (params.isBar) { print "this should display" }
 }
