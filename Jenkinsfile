@@ -16,18 +16,7 @@ pipeline {
             
          }
          
-          stage ("Change flght status") 
-        {
-            steps {
-             script {
-               env.EXECUTE = input message: 'User input required',
-                              parameters: [choice(name: 'Is Flight cancelled ?', choices: 'Yes', description: '')]
-                   
-     
-                  }
-       
-               }
-         }
+    
          
           stage ('Test Execution') 
         {
