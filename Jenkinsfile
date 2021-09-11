@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    bat 'mvn test'
+                    sh 'mvn test'
                     
                 }
             }
