@@ -3,7 +3,7 @@ pipeline {
     stages {
         
         
-        stage ('Test data preparation')
+        stage ('Test data preparation') 
         {
 
             steps {
@@ -16,21 +16,33 @@ pipeline {
             
          }
          
-          stage ('Test Execution')
+          stage ("Change flght status") 
+        {
+            steps {
+             script {
+               env.EXECUTE = input message: 'User input required',
+                              parameters: [choice(name: 'Is Flight cancelled ?', choices: 'Yes', description: '')]
+                   
+     
+                  }
+       
+               }
+         }
+         
+          stage ('Test Execution') 
         {
 
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn test -Dcucumber.options="--tags @sanity"'
+                    sh 'mvn clean install -Dcucumber.options="--tags @sanity"'
                     
                        }
                 }
             
          }
          
-         
-           stage ('Cucumber Reports') {
+          stage ('Cucumber Reports') {
 
             steps {
                 cucumber buildStatus: "UNSTABLE",
@@ -38,7 +50,6 @@ pipeline {
                     jsonReportDirectory: 'target'
 
             }
-           }
      
    }
 }
