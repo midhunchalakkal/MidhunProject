@@ -6,7 +6,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    bat 'mvn -f pom.xml "-Dcucumber.options=--tags '@TestData'" test'
+                    bat 'mvn -f pom.xml -Dcucumber.options=--tags '@TestData' test'
                     
                 }
             }
