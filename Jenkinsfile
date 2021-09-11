@@ -10,16 +10,16 @@ pipeline {
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
                  [$class: 'TextParameterDefinition', defaultValue: 'prelive', description: 'environment', name: 'environment'],
-                 [$class: 'TextParameterDefinition', defaultValue: 'testlive123', description: 'environment123', name: 'Test']
+                 [$class: 'TextParameterDefinition', defaultValue: '--tags @TestData', description: 'Tag', name: 'Tag']
                 ])
-                echo ("IQA Sheet Path: "+userInput['Config'])
-                echo ("Test Info file path: "+userInput['Test'])
+                echo ("environment : "+userInput['environment'])
+                echo ("Tag : "+userInput['Tag'])
 
                 }
                 
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn test -Dcucumber.options="--tags @TestData"'
+                    sh 'mvn test -Dcucumber.options=userInput['Tag']'
                     
                  }
                        
@@ -27,18 +27,6 @@ pipeline {
             }
         }
          
-        stage ('Test data preparation') 
-        {
-
-            steps {
-                withMaven(maven : 'Maven setup') {
-                
-                    sh 'mvn test -Dcucumber.options="--tags @TestData"'
-                    
-                       }
-                }
-            
-         }
          
           stage ('Cucumber Reports') {
 
