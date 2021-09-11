@@ -56,7 +56,7 @@ public class TestStepDefinition {
 	public void i_want_to_authenticate_with_valid_credentails() {
 
 		
-		//String projectName1=Configuration.getConfiguration().getProperty("projectName");
+		//String projectName1=Configuration.getConfiguration().ge	tProperty("projectName");
 		//String projectName2=Configuration.getConfiguration().getProperty("previousProject");
 		
 		String previousJobDir=System.getProperty("user.dir");
