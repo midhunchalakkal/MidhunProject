@@ -38,8 +38,11 @@ public class TestStepDefinition {
 		Utils.fileWriter("AB_Rebook_CB", Utils.getRandomNumber(10));
 		Utils.fileWriter("ABA_Rebook_CB", "ABA_Rebook_CB_Test123");
 		
+		System.out.println("############################################");
+		System.out.println("############################################");
 		System.out.println(Configuration.getConfiguration().getProperty("environment"));
-		
+		System.out.println("############################################");
+		System.out.println("############################################");
 	}
 
 	@Given("^user is already on Login Page$")
