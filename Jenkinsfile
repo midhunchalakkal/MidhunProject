@@ -1,13 +1,15 @@
 pipeline {
     agent any
     stages {
+        
+        
         stage ('Test data preparation') 
         {
 
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn cleam install -Dcucumber.options="--tags @TestData"'
+                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData"'
                     
                        }
                 }
@@ -34,17 +36,12 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn clean install -Dcucumber.options="--tags @sanity"'
+                    sh 'mvn test -Dcucumber.options="--tags @sanity"'
                     
                        }
                 }
             
          }
-            
-             
-            
-            
-            
-     }
-         
+     
+   }
 }
