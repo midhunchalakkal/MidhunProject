@@ -19,7 +19,7 @@ pipeline {
                 
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn test -Dcucumber.options=userInput['Tag']'
+                    sh "'mvn test -Dcucumber.options="+userInput['Tag']+"'"
                     
                  }
                        
