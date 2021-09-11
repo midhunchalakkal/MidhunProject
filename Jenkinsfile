@@ -36,7 +36,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn test -Dcucumber.options="--tags @sanity"'
+                    sh 'mvn clean install -Dcucumber.options="--tags @sanity"'
                     
                        }
                 }
