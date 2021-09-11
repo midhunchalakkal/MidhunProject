@@ -17,6 +17,9 @@ pipeline {
 
                 }
                 
+                 echo ("'mvn test -Dcucumber.options="+userInput['Tag']+"'")
+                 
+                 
                 withMaven(maven : 'Maven setup') {
                 
                     sh "'mvn test -Dcucumber.options="+userInput['Tag']+"'"
