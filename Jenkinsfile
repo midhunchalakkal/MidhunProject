@@ -20,10 +20,8 @@ pipeline {
         {
             steps {
              script {
-               env.EXECUTE = input message: 'Is Flight is cancelled ?',
-                             parameters: [string(defaultValue: '',
-                                          description: '',
-                                          name: 'Yes')]
+               env.EXECUTE = input message: 'User input required',
+                              parameters: [choice(name: 'EXECUTE', choices: 'Approved', description: 'Is Flight is cancelled ?')]
      
                   }
        
