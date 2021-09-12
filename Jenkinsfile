@@ -19,10 +19,12 @@ node {
      echo getBinding().getVariables().getClass().getName()
     
     def myvariables = getBinding().getVariables()
+    echo "outsode for loop "
    for (v in myvariables) {
+     echo "inside for loop "
        echo "${v} " + myvariables.get(v)
    }
- 
+    echo "outsode2 for loop "
    }
    
    
