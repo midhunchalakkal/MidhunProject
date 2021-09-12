@@ -18,7 +18,11 @@ node {
     echo "I am a "+getClass().getName()
      echo getBinding().getVariables().getClass().getName()
     
-    
+    def myvariables = getBinding().getVariables()
+   for (v in myvariables) {
+       echo "${v} " + myvariables.get(v)
+   }
+   echo STRING_PARAM1.getClass().getName()
    }
    
    
