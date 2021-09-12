@@ -15,7 +15,7 @@ node {
 
 		)
     
-     echo "Will deploy to ${params.DEPLOY_ENV}"
+     echo "Will deploy to ${params.USERNAME}"
    }
    
    
@@ -32,7 +32,7 @@ pipeline {
             steps {
              script {
              
-                   echo "Now we are getting the value  ${params.DEPLOY_ENV}"
+                   echo "Now we are getting the value  ${params.USERNAME}"
      
                   }
        
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData" -DUSERNAME=${params.USERNAME} -DPASSWORD=${params.PASSWORD}'
+                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData" '
                     
                        }
                 }
