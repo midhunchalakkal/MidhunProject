@@ -15,10 +15,10 @@ node {
 
 		)
     
-       echo "Will deploy to ${params.test.environment}"
-       echo "Will deploy to ${params.test.device}"
-       echo "Will deploy to ${params.branch}"
-       echo "Will deploy to ${params.outbound}"
+      // echo "Will deploy to ${params.test.environment}"
+     // echo "Will deploy to ${params.test.device}"
+      // echo "Will deploy to ${params.branch}"
+     //  echo "Will deploy to ${params.outbound}"
    }
    
    
@@ -35,10 +35,10 @@ pipeline {
             steps {
              script {
              
-                    echo "############### ${params.test.environment}"
-       				echo "############### ${params.test.device}"
+                   // echo "############### ${params.test.environment}"
+       				//echo "############### ${params.test.device}"
        				echo "############### ${params.branch}"
-       				echo "############### ${params.outbound}"
+       				//echo "############### ${params.outbound}"
      
                   }
        
