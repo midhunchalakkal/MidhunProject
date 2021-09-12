@@ -16,7 +16,7 @@ node {
 		)
     
     echo "I am a "+getClass().getName()
-    
+     echo getBinding().getVariables().getClass().getName()
     
     
    }
