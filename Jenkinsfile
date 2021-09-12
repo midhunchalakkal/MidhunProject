@@ -45,7 +45,7 @@ pipeline {
                 echo "####TEST#########"
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn test -Dcucumber.options="--tags @TestData"'
+                    sh 'mvn clean install -Dcucumber.options="--tags @TestData"'
                     
                        }
                 }
