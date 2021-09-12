@@ -1,3 +1,5 @@
+
+ def test44=""
 node {
    properties(
    
@@ -17,7 +19,7 @@ node {
 		)
     
      echo "##############################################"
-     def test44=""
+    
      params.each {
      param ->
      println "${param.key} -> ${param.value} "
