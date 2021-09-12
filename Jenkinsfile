@@ -2,7 +2,7 @@ node {
    properties(
    
    [parameters([string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', )])]
-   
+    [parameters([string(name: 'DEPLOY_DEV', defaultValue: 'TESTING', description: 'The target environment', )])]
 
 		)
     
