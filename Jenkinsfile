@@ -5,7 +5,7 @@ node {
    ])
 ])
   
-  choices: ['TESTING', 'STAGING', 'PRODUCTION']
+ echo "Will deploy to ${params.DEPLOY_ENV}"
    }
    
    
