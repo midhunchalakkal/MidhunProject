@@ -38,23 +38,19 @@ pipeline {
         
         
     
-         
-           stage ('Test Execution') 
+       stage ('Test data preparation') 
         {
 
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn clean install -Dcucumber.options="--tags @TestData"'
+                    sh 'mvn test -Dcucumber.options="--tags @TestData"'
                     
                        }
                 }
             
          }
-            
 
-         
-    
          
        
    }
