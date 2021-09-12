@@ -40,21 +40,19 @@ pipeline {
         
     
          
-          stage ("PARAMS") 
+          stage ('Test Execution') 
         {
+
             steps {
-             script {
-             
-                   // echo "############### ${params.test.environment}"
-       				//echo "############### ${params.[test.device]}"
-       				echo "############### ${params.branch}"
-       				echo "############### ${params.outbound}"
-     
-                  }
-       
-               }
+                withMaven(maven : 'Maven setup') {
+                
+                    sh 'mvn clean install -Dcucumber.options=--tags @Sanity'
+                    
+                       }
+                }
+            
          }
-         
+
          
     
          
