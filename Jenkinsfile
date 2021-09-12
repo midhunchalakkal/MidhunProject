@@ -17,10 +17,14 @@ node {
 		)
     
     echo "##############################################"
-     params.each {param ->
-     println "${param.key} -> ${param.value} "}
+     def test="testvaiable"
+     params.each {
+     param ->
+     println "${param.key} -> ${param.value} "
+     
+     }
     echo "##############################################"
-    
+    echo test
     // echo "mvn clean install -Dcucumber.options="--tags @Sanity"'
     
   
