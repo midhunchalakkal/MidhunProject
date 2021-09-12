@@ -15,10 +15,19 @@ node {
 
 		)
     
-      // echo "Will deploy to ${params.test.environment}"
-     // echo "Will deploy to ${params.test.device}"
-      // echo "Will deploy to ${params.branch}"
-     //  echo "Will deploy to ${params.outbound}"
+    
+    
+   echo "I am a "+getClass().getName()
+
+   echo "PARAMETERS"
+   echo "=========="
+   echo getBinding().getVariables().getClass().getName()
+   def myvariables = getBinding().getVariables()
+   for (v in myvariables) {
+       echo "${v} " + myvariables.get(v)
+   }
+   echo STRING_PARAM1.getClass().getName()
+   
    }
    
    
@@ -36,7 +45,7 @@ pipeline {
              script {
              
                    // echo "############### ${params.test.environment}"
-       				//echo "############### ${params.(test.device)}"
+       				//echo "############### ${params.[test.device]}"
        				echo "############### ${params.branch}"
        				echo "############### ${params.outbound}"
      
