@@ -5,6 +5,7 @@ node {
    ])
 ])
   
+  choices: ['TESTING', 'STAGING', 'PRODUCTION']
    }
    
    
@@ -12,7 +13,7 @@ node {
         {
             steps {
              script {
-             			echo "Will deploy to ${params.DEPLOY_ENV}"
+             			echo "Will deploy to empty"
      
                   }
        
