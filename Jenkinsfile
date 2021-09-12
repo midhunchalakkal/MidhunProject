@@ -22,7 +22,7 @@ node {
    for (v in myvariables) {
        echo "${v} " + myvariables.get(v)
    }
-   echo STRING_PARAM1.getClass().getName()
+ 
    }
    
    
