@@ -5,6 +5,10 @@ node {
    ])
 ])
 
+[choice(choices: ["A", "B", "C"].join("\n"),
+    description: 'Some choice parameter', 
+    name: 'SOME_CHOICE')]
+    
      echo "Will deploy to ${params.DEPLOY_ENV}"
    }
    
