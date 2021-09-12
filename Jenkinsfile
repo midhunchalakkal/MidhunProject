@@ -4,9 +4,9 @@ node {
     [parameters([
     
     
-        string(name: 'DEPLOY_ENV', defaultValue: 'TESTING', description: 'The target environment', ),
-        string(name: 'DEPLOY_ENSSSV', defaultValue: 'TSSESTING', description: 'The targetSSS environment', ),
-        choice(choices: ["A", "B", "C"].join("\n"),description: 'Some choice parameter', name: 'SOME_CHOICE'),
+        string(name: 'USERNAME', defaultValue: 'TESTING', description: 'The target environment', ),
+        string(name: 'PASSWORD', defaultValue: 'TSSESTING', description: 'The targetSSS environment', ),
+        choice(choices: ["DESKTOP", "TAB", "MOB"].join("\n"),description: 'Some choice parameter', name: 'SOME_CHOICE'),
         booleanParam(defaultValue: false,description: 'isFoo should be false',name: 'isFoo')
         
         ])
@@ -38,6 +38,21 @@ pipeline {
        
                }
          }
+         
+         
+            stage ('Test data preparation') 
+        {
+
+            steps {
+                withMaven(maven : 'Maven setup') {
+                
+                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData" -DUSERNAME=${params.USERNAME} -DPASSWORD=${params.PASSWORD}'
+                    
+                       }
+                }
+            
+         }
+         
          
        
    }
