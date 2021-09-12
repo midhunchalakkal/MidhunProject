@@ -36,7 +36,7 @@ pipeline {
              script {
              
                    // echo "############### ${params.test.environment}"
-       				//echo "############### ${params.test.device}"
+       				echo "############### ${params.test.device}"
        				echo "############### ${params.branch}"
        				echo "############### ${params.outbound}"
      
