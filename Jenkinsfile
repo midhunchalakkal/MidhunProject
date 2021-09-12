@@ -6,7 +6,7 @@ node {
     
         choice(choices: ["ecp-prelive", "capdev628", "capdev472"].join("\n"),description: 'Some choice parameter', name: 'test.environment')
         string(name: 'branch', defaultValue: 'master', description: 'The target environment', ),
-        string(name: 'outbound', defaultValue: '40', description: 'The targetSSS environment', ),
+        string(name: 'outbound', defaultValue: '40S', description: 'The targetSSS environment', ),
         choice(choices: ["dektop", "tab", "mob"].join("\n"),description: 'Some choice parameter', name: 'test.device')
         
         ])
