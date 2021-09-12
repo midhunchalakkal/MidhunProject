@@ -4,10 +4,10 @@ node {
     [parameters([
     
     
-        string(name: 'USERNAME', defaultValue: 'TESTING', description: 'The target environment', ),
-        string(name: 'PASSWORD', defaultValue: 'TSSESTING', description: 'The targetSSS environment', ),
-        choice(choices: ["DESKTOP", "TAB", "MOB"].join("\n"),description: 'Some choice parameter', name: 'SOME_CHOICE'),
-        booleanParam(defaultValue: false,description: 'isFoo should be false',name: 'isFoo')
+        choice(choices: ["ecp-prelive", "capdev628", "capdev472"].join("\n"),description: 'Some choice parameter', name: 'test.environment')
+        string(name: 'branch', defaultValue: 'master', description: 'The target environment', ),
+        string(name: 'outbound', defaultValue: '40', description: 'The targetSSS environment', ),
+        choice(choices: ["dektop", "tab", "mob"].join("\n"),description: 'Some choice parameter', name: 'test.device'),
         
         ])
      ]
