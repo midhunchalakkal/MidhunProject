@@ -9,15 +9,4 @@ node {
    }
    
    
-      stage ("PRINT") 
-        {
-            steps {
-             script {
-             			echo "Will deploy to empty"
-     
-                  }
-       
-               }
-         }
-         
    
