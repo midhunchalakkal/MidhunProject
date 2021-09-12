@@ -5,10 +5,32 @@ node {
    ])
 ])
 
-	choices: ['TESTING\nSTAGING\nPRODUCTION']
-  
      echo "Will deploy to ${params.DEPLOY_ENV}"
    }
    
+   
+   
+pipeline {
+    agent any
+    stages {
+        
+        
+    
+         
+          stage ("Change flght status") 
+        {
+            steps {
+             script {
+             
+                   echo "Will deploy to ${params.DEPLOY_ENV}"
+     
+                  }
+       
+               }
+         }
+         
+       
+   }
+}
    
    
