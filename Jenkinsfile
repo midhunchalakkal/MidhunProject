@@ -16,23 +16,5 @@ pipeline {
             
          }
          
-    
-   
-         
-          stage ('Test Execution') 
-        {
-
-            steps {
-                withMaven(maven : 'Maven setup') {
-                
-                    sh 'mvn clean install -Dcucumber.options="--tags @Sanity"'
-                    
-                       }
-                }
-            
-         }
-         
-        
-     
    }
 }
