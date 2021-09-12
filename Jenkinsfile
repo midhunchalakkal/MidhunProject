@@ -38,7 +38,7 @@ pipeline {
                    // echo "############### ${params.test.environment}"
        				//echo "############### ${params.test.device}"
        				echo "############### ${params.branch}"
-       				//echo "############### ${params.outbound}"
+       				echo "############### ${params.outbound}"
      
                   }
        
@@ -46,19 +46,7 @@ pipeline {
          }
          
          
-            stage ('Test data preparation') 
-        {
-
-            steps {
-                withMaven(maven : 'Maven setup') {
-                
-                    sh 'mvn clean install  -Dcucumber.options="--tags @TestData" '
-                    
-                       }
-                }
-            
-         }
-         
+    
          
        
    }
