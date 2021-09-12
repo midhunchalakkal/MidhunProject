@@ -15,16 +15,13 @@ node {
 
 		)
     
-    echo "I am a "+getClass().getName()
-     echo getBinding().getVariables().getClass().getName()
+     params.each {param ->
+  println "${param.key} -> ${param.value} "
+}
+
     
-    def myvariables = getBinding().getVariables()
-    echo "outsode for loop "
-   for (v in myvariables) {
-     echo "inside for loop "
-       echo "${v} " + myvariables.get(v)
-   }
-    echo "outsode2 for loop "
+    
+  
    }
    
    
