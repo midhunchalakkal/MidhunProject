@@ -47,14 +47,13 @@ pipeline {
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                echo "##############################################"
-   				 echo test44
-                
+                    
                     sh 'mvn test -Dcucumber.options="--tags @TestData"'
                     
                        }
                 }
-            
+            echo "##############################################"
+   			echo test44
          }
          
    }
