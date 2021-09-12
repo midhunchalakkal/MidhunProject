@@ -17,11 +17,12 @@ node {
 		)
     
     echo "##############################################"
-     def test="testvaiable"
+     def test="-D"
      params.each {
      param ->
      println "${param.key} -> ${param.value} "
-     
+     def test12="${param.key}=${param.value}"
+     test=test+test12
      }
     echo "##############################################"
     echo test
