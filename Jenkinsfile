@@ -17,15 +17,15 @@ node {
 		)
     
     echo "##############################################"
-     def test=""
+     def test44=""
      params.each {
      param ->
      println "${param.key} -> ${param.value} "
      def test12="-D${param.key}=${param.value} "
-     test=test+test12
+     test44=test44+test12
      }
     echo "##############################################"
-    echo test
+    echo test44
    
   
    }
@@ -42,6 +42,7 @@ pipeline {
         {
 
             steps {
+                echo "####TEST#########"
                 withMaven(maven : 'Maven setup') {
                 
                     sh 'mvn test -Dcucumber.options="--tags @TestData"'
