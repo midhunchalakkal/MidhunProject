@@ -17,12 +17,12 @@ pipeline {
         
     
          
-          stage ("Change flght status") 
+          stage ("PARAMS") 
         {
             steps {
              script {
              
-                   echo "Will deploy to ${params.DEPLOY_ENV}"
+                   echo "Now we are getting the value  ${params.DEPLOY_ENV}"
      
                   }
        
