@@ -24,8 +24,7 @@ node {
      def test12="-D${param.key}=${param.value} "
      test44=test44+test12
      }
-    echo "##############################################"
-    echo test44
+    
    
  
    }
@@ -45,6 +44,9 @@ pipeline {
 
             steps {
                 withMaven(maven : 'Maven setup') {
+                
+                echo "##############################################"
+   				 echo test44
                 
                     sh 'mvn test -Dcucumber.options="--tags @TestData"'
                     
