@@ -15,10 +15,10 @@ node {
 
 		)
     
+    echo "##############################################"
      params.each {param ->
-  println "${param.key} -> ${param.value} "
-}
-
+     println "${param.key} -> ${param.value} "}
+    echo "##############################################"
     
     
   
