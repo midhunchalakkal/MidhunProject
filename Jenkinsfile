@@ -26,8 +26,7 @@ node {
      }
     echo "##############################################"
     echo test
-    // echo "mvn clean install -Dcucumber.options="--tags @Sanity"'
-    
+   
   
    }
    
@@ -40,16 +39,18 @@ pipeline {
         
     
          
-          stage ('Test Execution') 
+           stage ('Test Execution') 
         {
 
             steps {
                 withMaven(maven : 'Maven setup') {
                 
-                    sh 'mvn clean install -Dcucumber.options="--tags @Sanity"'
+                    sh 'mvn clean install -Dcucumber.options="--tags @TestData"'
                     
                        }
                 }
+            
+         }
             
          }
 
