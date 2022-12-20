@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven test123
+name: Java CI with Maven test1234
 
 on:
   push:
