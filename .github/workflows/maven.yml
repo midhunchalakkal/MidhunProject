@@ -7,7 +7,7 @@
 # documentation.
 #[self-hosted,macOS,X64,midhun-1]
 
-name: Java CI with Maven test123433ssdf
+name: Java CI with Maven test123433ssdfS
 
 on:
   push:
