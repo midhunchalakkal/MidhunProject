@@ -19,7 +19,7 @@ jobs:
   
   build:
 
-    runs-on: Elbys-MacBook-Air
+    runs-on: self-hosted
     steps:
     - run: echo 'hello test project'
     - run: echo test
