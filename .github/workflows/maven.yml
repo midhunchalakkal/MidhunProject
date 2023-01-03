@@ -11,8 +11,6 @@ name: Java CI with Maven test1234
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 
 jobs:
